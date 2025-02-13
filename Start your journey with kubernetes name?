@@ -1,0 +1,47 @@
+Start Your Journey with Kubernetes
+Introduction
+
+Kubernetes helps you manage and scale containerized applications. This tutorial will guide you through creating a simple Kubernetes cluster and deploying an app.
+
+Prerequisites
+
+Kubernetes CLI (kubectl) installed
+
+A running Kubernetes cluster (Civo, Minikube, or kind)
+
+
+Step 1: Set Up a Kubernetes Cluster
+
+Create a Kubernetes cluster on Civo with this command:
+
+civo k3s create my-cluster --nodes=3
+
+Or, start a local cluster using Minikube:
+
+minikube start
+
+Check that your cluster is running:
+
+kubectl get nodes
+
+Step 2: Deploy an Application
+
+Deploy an Nginx web server:
+
+kubectl create deployment nginx --image=nginx
+
+Expose the deployment:
+
+kubectl expose deployment nginx --port=80 --type=LoadBalancer
+
+Step 3: Access Your App
+
+Get the external IP address:
+
+kubectl get svc nginx
+
+Visit the IP in your browser to see your Nginx app!
+
+Conclusion
+
+You've deployed your first Kubernetes app. Continue learning about scaling, services, and storage for more complex apps!
